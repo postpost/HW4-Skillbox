@@ -15,14 +15,17 @@ namespace randomArray
 
             int[,] array = new int[row, col];
             Random rand = new Random();
+            
             for (int i = 0; i<array.GetLength(0); i++)
             {
+                int sum = 0;
                 for(int j=0; j<array.GetLength(1); j++)
                 {
                     array[i, j] = rand.Next(10);
+                    sum += array[i, j];
                     Console.Write($"{array[i, j]} ");
                 }
-                Console.WriteLine();
+                Console.WriteLine($": {sum}");
             }
         }
     }
